@@ -1,4 +1,4 @@
-package unam.diplomado.pixup.domain;
+package unam.diplomado.pixup.colonia.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -29,6 +29,6 @@ public class Colonia {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_municipio", nullable = false)
-    private unam.diplomado.pixup.domain.Municipio idMunicipio;
+    private Municipio idMunicipio;
 
 }

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import unam.diplomado.pixup.usuario.domain.Usuario;
 
 import java.time.Instant;
 
@@ -13,6 +14,7 @@ import java.time.Instant;
 @Table(name = "notificacion")
 public class Notificacion {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
@@ -23,7 +25,7 @@ public class Notificacion {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_usuario", nullable = false)
-    private unam.diplomado.pixup.domain.Usuario idUsuario;
+    private Usuario idUsuario;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

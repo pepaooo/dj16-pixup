@@ -1,4 +1,4 @@
-package unam.diplomado.pixup.domain;
+package unam.diplomado.pixup.colonia.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "municipio")
 public class Municipio {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
