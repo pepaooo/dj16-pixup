@@ -3,9 +3,13 @@ package unam.diplomado.pixup.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "disco")
 public class Disco {
@@ -53,85 +57,5 @@ public class Disco {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_genero_musical", nullable = false)
     private unam.diplomado.pixup.domain.GeneroMusical idGeneroMusical;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public Float getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(Float precio) {
-        this.precio = precio;
-    }
-
-    public Integer getExistencia() {
-        return existencia;
-    }
-
-    public void setExistencia(Integer existencia) {
-        this.existencia = existencia;
-    }
-
-    public Float getDescuento() {
-        return descuento;
-    }
-
-    public void setDescuento(Float descuento) {
-        this.descuento = descuento;
-    }
-
-    public LocalDate getFechaLanzamiento() {
-        return fechaLanzamiento;
-    }
-
-    public void setFechaLanzamiento(LocalDate fechaLanzamiento) {
-        this.fechaLanzamiento = fechaLanzamiento;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
-    public unam.diplomado.pixup.domain.Disquera getIdDisquera() {
-        return idDisquera;
-    }
-
-    public void setIdDisquera(unam.diplomado.pixup.domain.Disquera idDisquera) {
-        this.idDisquera = idDisquera;
-    }
-
-    public Artista getIdArtista() {
-        return idArtista;
-    }
-
-    public void setIdArtista(Artista idArtista) {
-        this.idArtista = idArtista;
-    }
-
-    public unam.diplomado.pixup.domain.GeneroMusical getIdGeneroMusical() {
-        return idGeneroMusical;
-    }
-
-    public void setIdGeneroMusical(unam.diplomado.pixup.domain.GeneroMusical idGeneroMusical) {
-        this.idGeneroMusical = idGeneroMusical;
-    }
 
 }

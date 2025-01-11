@@ -3,9 +3,13 @@ package unam.diplomado.pixup.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalTime;
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "cancion")
 public class Cancion {
@@ -26,37 +30,5 @@ public class Cancion {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_disco", nullable = false)
     private unam.diplomado.pixup.domain.Disco idDisco;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public LocalTime getDuracion() {
-        return duracion;
-    }
-
-    public void setDuracion(LocalTime duracion) {
-        this.duracion = duracion;
-    }
-
-    public unam.diplomado.pixup.domain.Disco getIdDisco() {
-        return idDisco;
-    }
-
-    public void setIdDisco(unam.diplomado.pixup.domain.Disco idDisco) {
-        this.idDisco = idDisco;
-    }
 
 }

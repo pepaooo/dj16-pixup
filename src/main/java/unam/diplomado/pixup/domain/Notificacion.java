@@ -2,9 +2,13 @@ package unam.diplomado.pixup.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "notificacion")
 public class Notificacion {
@@ -25,37 +29,5 @@ public class Notificacion {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_tipo_notificacion", nullable = false)
     private unam.diplomado.pixup.domain.TipoNotificacion idTipoNotificacion;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Instant getFechaNotificacion() {
-        return fechaNotificacion;
-    }
-
-    public void setFechaNotificacion(Instant fechaNotificacion) {
-        this.fechaNotificacion = fechaNotificacion;
-    }
-
-    public unam.diplomado.pixup.domain.Usuario getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(unam.diplomado.pixup.domain.Usuario idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-    public unam.diplomado.pixup.domain.TipoNotificacion getIdTipoNotificacion() {
-        return idTipoNotificacion;
-    }
-
-    public void setIdTipoNotificacion(unam.diplomado.pixup.domain.TipoNotificacion idTipoNotificacion) {
-        this.idTipoNotificacion = idTipoNotificacion;
-    }
 
 }

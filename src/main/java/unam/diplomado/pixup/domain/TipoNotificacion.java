@@ -6,7 +6,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "tipo_notificacion")
 public class TipoNotificacion {
@@ -23,29 +27,5 @@ public class TipoNotificacion {
     @NotNull
     @Column(name = "ruta_plantilla", nullable = false, length = 120)
     private String rutaPlantilla;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getRutaPlantilla() {
-        return rutaPlantilla;
-    }
-
-    public void setRutaPlantilla(String rutaPlantilla) {
-        this.rutaPlantilla = rutaPlantilla;
-    }
 
 }

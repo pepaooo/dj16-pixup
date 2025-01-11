@@ -2,9 +2,13 @@ package unam.diplomado.pixup.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "orden")
 public class Orden {
@@ -36,61 +40,5 @@ public class Orden {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_usuario", nullable = false)
     private unam.diplomado.pixup.domain.Usuario idUsuario;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Float getCostoTotal() {
-        return costoTotal;
-    }
-
-    public void setCostoTotal(Float costoTotal) {
-        this.costoTotal = costoTotal;
-    }
-
-    public Instant getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Instant fecha) {
-        this.fecha = fecha;
-    }
-
-    public Integer getCantidadTotal() {
-        return cantidadTotal;
-    }
-
-    public void setCantidadTotal(Integer cantidadTotal) {
-        this.cantidadTotal = cantidadTotal;
-    }
-
-    public Boolean getEstatusEnvio() {
-        return estatusEnvio;
-    }
-
-    public void setEstatusEnvio(Boolean estatusEnvio) {
-        this.estatusEnvio = estatusEnvio;
-    }
-
-    public Float getCostoEnvio() {
-        return costoEnvio;
-    }
-
-    public void setCostoEnvio(Float costoEnvio) {
-        this.costoEnvio = costoEnvio;
-    }
-
-    public unam.diplomado.pixup.domain.Usuario getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(unam.diplomado.pixup.domain.Usuario idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 
 }

@@ -3,9 +3,15 @@ package unam.diplomado.pixup.domain;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Objects;
 
+@Setter
+@Getter
+@NoArgsConstructor
 @Embeddable
 public class DetalleOrdenId implements java.io.Serializable {
     private static final long serialVersionUID = -4122216244147099482L;
@@ -16,22 +22,6 @@ public class DetalleOrdenId implements java.io.Serializable {
     @NotNull
     @Column(name = "id_disco", nullable = false)
     private Integer idDisco;
-
-    public Integer getIdOrden() {
-        return idOrden;
-    }
-
-    public void setIdOrden(Integer idOrden) {
-        this.idOrden = idOrden;
-    }
-
-    public Integer getIdDisco() {
-        return idDisco;
-    }
-
-    public void setIdDisco(Integer idDisco) {
-        this.idDisco = idDisco;
-    }
 
     @Override
     public boolean equals(Object o) {
