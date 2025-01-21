@@ -1,5 +1,6 @@
 package unam.diplomado.pixup.colonia.repository;
 
+import jakarta.inject.Singleton;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceUnit;
 import jakarta.persistence.TypedQuery;
@@ -9,6 +10,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
+@Singleton
 public class JpaColoniaRepository implements ColoniaRepository {
 
     @PersistenceUnit(unitName = "pixup")

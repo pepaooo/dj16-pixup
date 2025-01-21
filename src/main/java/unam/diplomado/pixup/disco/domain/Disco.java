@@ -1,8 +1,10 @@
-package unam.diplomado.pixup.domain;
+package unam.diplomado.pixup.disco.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +12,8 @@ import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "disco")
 public class Disco {
@@ -47,7 +51,7 @@ public class Disco {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_disquera", nullable = false)
-    private unam.diplomado.pixup.domain.Disquera idDisquera;
+    private Disquera idDisquera;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -57,6 +61,6 @@ public class Disco {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_genero_musical", nullable = false)
-    private unam.diplomado.pixup.domain.GeneroMusical idGeneroMusical;
+    private GeneroMusical idGeneroMusical;
 
 }

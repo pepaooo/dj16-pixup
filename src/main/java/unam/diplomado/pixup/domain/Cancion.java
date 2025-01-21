@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import unam.diplomado.pixup.disco.domain.Disco;
 
 import java.time.LocalTime;
 
@@ -30,6 +31,6 @@ public class Cancion {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_disco", nullable = false)
-    private unam.diplomado.pixup.domain.Disco idDisco;
+    private Disco idDisco;
 
 }

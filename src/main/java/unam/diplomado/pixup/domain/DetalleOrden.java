@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import unam.diplomado.pixup.disco.domain.Disco;
 
 @Data
 @NoArgsConstructor
@@ -21,7 +22,7 @@ public class DetalleOrden {
     @MapsId("idDisco")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_disco", nullable = false)
-    private unam.diplomado.pixup.domain.Disco idDisco;
+    private Disco idDisco;
 
     @NotNull
     @Column(name = "cantidad", nullable = false)
