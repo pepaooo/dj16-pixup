@@ -28,6 +28,6 @@ public class Municipio {
     @NotNull
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_estado", nullable = false)
-    private Estado idEstado;
+    private Estado estado;
 
 }

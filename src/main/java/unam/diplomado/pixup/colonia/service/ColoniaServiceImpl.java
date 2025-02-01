@@ -65,8 +65,6 @@ public class ColoniaServiceImpl implements ColoniaService {
     @Override
     public void deleteColoniaById(Integer id) {
         coloniaRepository.findById(id).ifPresent(coloniaRepository::delete);
-//        Colonia colonia = coloniaRepository.findById(id).orElseThrow(() -> new ColoniaNotFoundException(id));
-//        coloniaRepository.delete(colonia);
     }
 }
 

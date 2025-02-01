@@ -51,16 +51,16 @@ public class Disco {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_disquera", nullable = false)
-    private Disquera idDisquera;
+    private Disquera disquera;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_artista", nullable = false)
-    private Artista idArtista;
+    private Artista artista;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_genero_musical", nullable = false)
-    private GeneroMusical idGeneroMusical;
+    private GeneroMusical generoMusical;
 
 }
