@@ -31,6 +31,6 @@ public class Cancion {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_disco", nullable = false)
-    private Disco idDisco;
+    private Disco disco;
 
 }
