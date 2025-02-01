@@ -11,4 +11,10 @@ public interface ColoniaRepository {
 
     Optional<Colonia> findById(Integer id);
 
+    Colonia saveOrUpdate(Colonia colonia);
+
+    void delete (Colonia colonia);
+
+    Optional<Colonia> findByCpAndNombre(String cp, String nombre);
+
 }

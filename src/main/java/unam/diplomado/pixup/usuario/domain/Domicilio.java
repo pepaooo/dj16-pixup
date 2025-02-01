@@ -34,16 +34,16 @@ public class Domicilio {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_usuario", nullable = false)
-    private Usuario idUsuario;
+    private Usuario usuario;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_colonia", nullable = false)
-    private Colonia idColonia;
+    private Colonia colonia;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_tipo_domicilio", nullable = false)
-    private TipoDomicilio idTipoDomicilio;
+    private TipoDomicilio tipoDomicilio;
 
 }

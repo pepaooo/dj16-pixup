@@ -14,6 +14,7 @@ import unam.diplomado.pixup.disco.domain.Disquera;
 import unam.diplomado.pixup.disco.domain.GeneroMusical;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -37,7 +38,7 @@ class JpaDiscoRepositoryTest {
     void when_findById_notFound() {
         // Expected values - Initialization
         when(entityManager.createQuery(anyString(), ArgumentMatchers.<Class<Disco>>any())).thenReturn(typedQuery);
-        when(typedQuery.getSingleResult()).thenReturn(null);
+        when(typedQuery.getResultList()).thenReturn(List.of());
 
         // Test
         Optional<Disco> disco = jpaDiscoRepository.findByTituloAndArtista("Disco 1", 1);
@@ -78,7 +79,7 @@ class JpaDiscoRepositoryTest {
                 .idGeneroMusical(mockGeneroMusical)
                 .build();
         when(entityManager.createQuery(anyString(), ArgumentMatchers.<Class<Disco>>any())).thenReturn(typedQuery);
-        when(typedQuery.getSingleResult()).thenReturn(mockDisco);
+        when(typedQuery.getResultList()).thenReturn(List.of(mockDisco));
 
         // Test
         Optional<Disco> disco = jpaDiscoRepository.findByTituloAndArtista("Disco 1", 1);

@@ -67,8 +67,8 @@ class JpaColoniaRepositoryUnitTest {
         // Expected values - Initialization
         Estado mexico = Estado.builder().id(1).nombre("Mexico").build();
         Municipio tecamac = Municipio.builder().id(1).nombre("Tecamac").idEstado(mexico).build();
-        Colonia colonia1 = Colonia.builder().id(1).nombre("Colonia 1").cp("12345").idMunicipio(tecamac).build();
-        Colonia colonia2 = Colonia.builder().id(2).nombre("Colonia 2").cp("23456").idMunicipio(tecamac).build();
+        Colonia colonia1 = Colonia.builder().id(1).nombre("Colonia 1").cp("12345").municipio(tecamac).build();
+        Colonia colonia2 = Colonia.builder().id(2).nombre("Colonia 2").cp("23456").municipio(tecamac).build();
         when(entityManager.createQuery(anyString(), ArgumentMatchers.<Class<Colonia>>any())).thenReturn(typedQuery);
         when(typedQuery.getResultList()).thenReturn(List.of(colonia1, colonia2));
 

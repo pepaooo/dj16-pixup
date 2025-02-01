@@ -2,7 +2,7 @@ package unam.diplomado.pixup.usuario.repository;
 
 import jakarta.inject.Singleton;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceUnit;
+import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import unam.diplomado.pixup.usuario.domain.TipoDomicilio;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 @Singleton
 public class JpaTipoDomicilioRepository implements TipoDomicilioRepository {
 
-    @PersistenceUnit(unitName = "pixup")
+    @PersistenceContext(unitName = "pixup")
     private EntityManager entityManager;
 
     @Override

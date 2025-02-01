@@ -1,21 +1,21 @@
-package unam.diplomado.pixup.disco.repository;
+package unam.diplomado.pixup.colonia.repository;
 
 import jakarta.inject.Singleton;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import unam.diplomado.pixup.disco.domain.GeneroMusical;
+import unam.diplomado.pixup.colonia.domain.Municipio;
 
 import java.util.Optional;
 
 @Singleton
-public class JpaGeneroMusicalRepository implements GeneroMusicalRepository {
+public class JpaMunicipioRepository implements MunicipioRepository {
 
     @PersistenceContext(unitName = "pixup")
     private EntityManager entityManager;
 
     @Override
-    public Optional<GeneroMusical> findById(Integer id) {
-        GeneroMusical query = entityManager.find(GeneroMusical.class, id);
+    public Optional<Municipio> findById(Integer id) {
+        Municipio query = entityManager.find(Municipio.class, id);
         return Optional.ofNullable(query);
     }
 }

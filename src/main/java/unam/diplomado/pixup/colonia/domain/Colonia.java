@@ -1,7 +1,9 @@
 package unam.diplomado.pixup.colonia.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,18 +23,15 @@ public class Colonia {
     private Integer id;
 
     @Size(max = 50)
-    @NotNull
-    @Column(name = "nombre", nullable = false, length = 50)
+    @NotBlank(message = "El nombre de la colonia no puede estar vacio")
     private String nombre;
 
-    @Size(max = 5)
-    @NotNull
-    @Column(name = "cp", nullable = false, length = 5)
+    @Pattern(regexp = "^(\\d{5}$)", message = "El código postal debe tener 5 dígitos")
     private String cp;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "id_municipio", nullable = false)
-    private Municipio idMunicipio;
+    @NotNull(message = "La colonia debe estar asociada a un municipio")
+    private Municipio municipio;
 
 }
