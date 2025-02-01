@@ -12,7 +12,7 @@ public class ColoniaMapper {
                 .nombre(colonia.getNombre())
                 .cp(colonia.getCp())
                 .municipio(colonia.getMunicipio().getNombre())
-                .estado(colonia.getMunicipio().getIdEstado().getNombre())
+                .estado(colonia.getMunicipio().getEstado().getNombre())
                 .build();
     }
 

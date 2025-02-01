@@ -74,9 +74,9 @@ class JpaDiscoRepositoryTest {
                 .fechaLanzamiento(LocalDate.now())
                 .imagen("imagen.jpg")
                 .precio(250.0f)
-                .idDisquera(mockDisquera)
-                .idArtista(mockArtista)
-                .idGeneroMusical(mockGeneroMusical)
+                .disquera(mockDisquera)
+                .artista(mockArtista)
+                .generoMusical(mockGeneroMusical)
                 .build();
         when(entityManager.createQuery(anyString(), ArgumentMatchers.<Class<Disco>>any())).thenReturn(typedQuery);
         when(typedQuery.getResultList()).thenReturn(List.of(mockDisco));
