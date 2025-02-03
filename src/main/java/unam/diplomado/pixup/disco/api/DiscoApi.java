@@ -12,7 +12,7 @@ import unam.diplomado.pixup.disco.domain.Disco;
 
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/discos")
+@Path("discos")
 public interface DiscoApi {
 
     @POST

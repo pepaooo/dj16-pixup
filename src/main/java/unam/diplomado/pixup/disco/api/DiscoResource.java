@@ -13,7 +13,11 @@ public class DiscoResource implements DiscoApi {
     @Override
     public Response altaDisco(Disco disco) {
         try {
-            discoService.registrarDisco(disco);
+            Disco discoCreado = discoService.registrarDisco(disco);
+            return Response
+                    .status(Response.Status.CREATED)
+                    .entity(discoCreado)
+                    .build();
         } catch (Exception e) {
             if (e.getCause() instanceof DiscoAlreadyExistsException) {
                 return Response
@@ -31,9 +35,6 @@ public class DiscoResource implements DiscoApi {
                     .entity(e.getCause().getMessage())
                     .build();
         }
-        return Response
-                .status(Response.Status.CREATED)
-                .entity(disco)
-                .build();
+
     }
 }

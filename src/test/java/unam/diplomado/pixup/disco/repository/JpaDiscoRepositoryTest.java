@@ -14,6 +14,7 @@ import unam.diplomado.pixup.disco.domain.Disquera;
 import unam.diplomado.pixup.disco.domain.GeneroMusical;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -71,7 +72,7 @@ class JpaDiscoRepositoryTest {
                 .titulo("Disco 1")
                 .existencia(1)
                 .descuento(15.0f)
-                .fechaLanzamiento(LocalDate.now())
+                .fechaLanzamiento(LocalDateTime.now())
                 .imagen("imagen.jpg")
                 .precio(250.0f)
                 .disquera(mockDisquera)
