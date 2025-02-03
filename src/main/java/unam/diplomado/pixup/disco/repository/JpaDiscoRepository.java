@@ -17,7 +17,7 @@ public class JpaDiscoRepository implements DiscoRepository {
 
     @Override
     public Optional<Disco> findByTituloAndArtista(String titulo, Integer idArtista) {
-        TypedQuery<Disco> query = entityManager.createQuery("select d from Disco d where d.titulo = :titulo and d.artista = :idArtista", Disco.class);
+        TypedQuery<Disco> query = entityManager.createQuery("select d from Disco d where d.titulo = :titulo and d.artista.id = :idArtista", Disco.class);
         query.setParameter("titulo", titulo);
         query.setParameter("idArtista", idArtista);
         List<Disco> discos = query.getResultList();
