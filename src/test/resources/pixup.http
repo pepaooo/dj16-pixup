@@ -1,0 +1,31 @@
+POST http://localhost:8080/pixup/api/discos/alta
+Content-Type: application/json
+
+{
+  "titulo": "Vals del obrero",
+  "precio": 350.95,
+  "existencia": 100,
+  "descuento": 5.0,
+  "fechaLanzamiento": "2012-04-10T10:15:45",
+  "imagen": "vals_del_obrero.png",
+  "artista" : {
+    "id": 1
+  },
+  "disquera": {
+    "id": 1
+  },
+  "generoMusical": {
+    "id": 1
+  }
+}
+
+###
+GET http://localhost:8080/pixup/api/colonias?cp=11000
+Accept: application/json
+
+###
+### GET Colonia by id
+GET http://localhost:8080/pixup/api/colonias/1
+
+###
+

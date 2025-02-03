@@ -3,10 +3,7 @@ package unam.diplomado.pixup.disco.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,6 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @Table(name = "disco")
+@ToString
 public class Disco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
