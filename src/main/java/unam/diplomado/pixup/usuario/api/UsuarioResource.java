@@ -23,7 +23,7 @@ public class UsuarioResource implements UsuarioApi {
         Usuario usuario = mapper.toUsuario(registroUsuarioDTO.getUsuario());
         Domicilio domicilio = mapper.toDomicilio(registroUsuarioDTO.getDomicilio());
 
-        // Invicación de servicio de negocio
+        // Invocación de servicio de negocio
         Usuario usuarioCreado = usuarioService.registrarUsuario(usuario, domicilio);
 
         // Transformación Entity - DTO

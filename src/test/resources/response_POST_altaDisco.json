@@ -1,21 +1,5 @@
 {
-  "artista": {
-    "id": 1,
-    "nombre": "Ska P"
-  },
-  "descuento": 5.0,
-  "disquera": {
-    "id": 1,
-    "nombre": "MGM ESTUDIO"
-  },
-  "existencia": 100,
-  "fechaLanzamiento": "2012-04-10T10:15:45",
-  "generoMusical": {
-    "descripcion": "Rock",
-    "id": 1
-  },
-  "id": 1,
-  "imagen": "vals_del_obrero.png",
-  "precio": 350.95,
-  "titulo": "Vals del obrero"
+  "artista": "Soulfly",
+  "id": 5,
+  "titulo": "Soulfy"
 }
